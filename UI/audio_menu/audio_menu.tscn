@@ -1,0 +1,112 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://placeholder_assets/sound_slider_cursor.png" type="Texture" id=1]
+[ext_resource path="res://placeholder_assets/sound_slider_bar.png" type="Texture" id=2]
+[ext_resource path="res://UI/audio_menu/audio_menu.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="audio_menu" type="Control"]
+margin_left = 700.0
+margin_top = 278.0
+margin_right = 1178.0
+margin_bottom = 558.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ost" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -57.6956
+margin_top = -84.064
+margin_right = -17.6956
+margin_bottom = -44.0644
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="ost"]
+margin_left = -133.573
+margin_top = -11.2246
+margin_right = 252.427
+margin_bottom = 45.7754
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="slider" type="HSlider" parent="ost"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -136.0
+margin_top = -49.0
+margin_right = 215.0
+margin_bottom = 48.0
+custom_icons/tick = ExtResource( 1 )
+custom_icons/grabber_disabled = ExtResource( 1 )
+custom_icons/grabber_highlight = ExtResource( 1 )
+custom_icons/grabber = ExtResource( 1 )
+custom_styles/slider = SubResource( 1 )
+custom_styles/grabber_area_highlight = SubResource( 2 )
+custom_styles/grabber_area = SubResource( 3 )
+value = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sfx" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -57.6956
+margin_top = 59.7549
+margin_right = -17.6956
+margin_bottom = 99.7549
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="sfx"]
+margin_left = -133.573
+margin_top = -11.2246
+margin_right = 252.427
+margin_bottom = 45.7754
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="slider" type="HSlider" parent="sfx"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -136.0
+margin_top = -49.0
+margin_right = 215.0
+margin_bottom = 48.0
+custom_icons/tick = ExtResource( 1 )
+custom_icons/grabber_disabled = ExtResource( 1 )
+custom_icons/grabber_highlight = ExtResource( 1 )
+custom_icons/grabber = ExtResource( 1 )
+custom_styles/slider = SubResource( 1 )
+custom_styles/grabber_area_highlight = SubResource( 2 )
+custom_styles/grabber_area = SubResource( 3 )
+value = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="value_changed" from="ost/slider" to="." method="_on_slider_value_changed" binds= [ "ost" ]]
+[connection signal="value_changed" from="sfx/slider" to="." method="_on_slider_value_changed" binds= [ "sfx" ]]
